@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Doctor by Speciality</title>
+    <style>
+        /* Blue theme */
+        body {
+            font-family: Arial, sans-serif;
+            background: #e6f0ff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 35px;
+            background: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.25);
+            border-radius: 15px;
+        }
+
+        h2 {
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        select, input[type=submit] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #cce0ff;
+            font-size: 15px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #3399ff;
+            box-shadow: 0 0 8px #99ccff;
+        }
+
+        input[type=submit] {
+            background: linear-gradient(135deg,#004080,#3366cc);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input[type=submit]:hover {
+            background: linear-gradient(135deg,#3366cc,#004080);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Search Doctor by Speciality</h2>
+    <form action="PatientSearchDoctorServlet" method="get">
+        <label for="speciality">Speciality:</label>
+        <select name="speciality" id="speciality" required>
+            <option value="">--Select Speciality--</option>
+
+            <option value="Pediatrics">Pediatrics</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Psychiatry">Psychiatry</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="ENT">ENT</option>
+                    <option value="Gynecology">Gynecology</option>
+                    <option value="Urology">Urology</option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+</div>
+</body>
+</html>
