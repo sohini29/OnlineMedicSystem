@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #eef6fb;
+            overflow-y: auto;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .image-section {
+            flex: 1;
+            background:
+            url("https://png.pngtree.com/background/20210709/original/pngtree-blue-hospital-medical-western-medicine-poster-background-picture-image_954226.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px 0;
+            background: #eef6fb;
+        }
+
+        .form-box {
+            width: 420px;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
+            position: relative;
+        }
+
+        .form-box::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 90px;
+            height: 90px;
+            background: #cce5ff;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .form-box::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 110px;
+            height: 110px;
+            background: #e6f2ff;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 9px;
+            margin: 6px 0 12px;
+            border-radius: 6px;
+            border: 1px solid #99caff;
+        }
+
+        select {
+            background: white;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #0056b3, #007bff);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                height: 30vh;
+            }
+
+            .form-section {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="image-section"></div>
+
+    <div class="form-section">
+        <div class="form-box">
+            <h2>Patient Registration</h2>
+
+            <form action="PatientRegisterServlet" method="post">
+                Full Name:
+                <input type="text" name="full_name" required>
+
+                Age:
+                <input type="number" name="age" min="0" max="120" required>
+
+                Gender:
+                <select name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                Address:
+                <input type="text" name="address">
+
+                Phone:
+                <input type="text" name="phone">
+
+                Email:
+                <input type="text" name="email">
+
+                Username:
+                <input type="text" name="username" required>
+
+                Password:
+                <input type="password" name="password" required>
+
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
