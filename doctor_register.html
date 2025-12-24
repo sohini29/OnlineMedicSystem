@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f3eaff;
+            overflow-y: auto;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* LEFT IMAGE SECTION */
+        .image-section {
+            flex: 1;
+            background: 
+            url("https://media.istockphoto.com/id/482078816/photo/female-doctorss-hands-holding-stethoscope.jpg?s=612x612&w=0&k=20&c=Mu1mh1_CAT40WVuwl8ljFGXyjbBK5GtaYGVgvOP6hl8=");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RIGHT FORM SECTION */
+        .form-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 30px 0;
+            background: #f3eaff;
+        }
+
+        .form-box {
+            width: 450px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(128, 0, 128, 0.3);
+            position: relative;
+        }
+
+        /* PURPLE DECORATIVE SHAPES */
+        .form-box::before {
+            content: "";
+            position: absolute;
+            top: -35px;
+            right: -35px;
+            width: 100px;
+            height: 100px;
+            background: #d8b8ff;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .form-box::after {
+            content: "";
+            position: absolute;
+            bottom: -35px;
+            left: -35px;
+            width: 120px;
+            height: 120px;
+            background: #efe2ff;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6a1b9a;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 14px;
+            border-radius: 8px;
+            border: 1px solid #c7a4e0;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+        }
+
+        p {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        p a {
+            color: #8e24aa;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                height: 30vh;
+            }
+
+            .form-section {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="image-section"></div>
+
+    <div class="form-section">
+        <div class="form-box">
+            <h2>Doctor Registration</h2>
+
+            <form action="DoctorRegisterServlet" method="post">
+                Full Name:
+                <input type="text" name="fullname" required>
+
+                Specialty:
+                <select name="speciality" required>
+                    <option value="">--Select Speciality--</option>
+                    
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Psychiatry">Psychiatry</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="ENT">ENT</option>
+                    <option value="Gynecology">Gynecology</option>
+                    <option value="Urology">Urology</option>
+                    <!-- Add more specialties as per your search doctor module -->
+                </select>
+
+                Phone:
+                <input type="text" name="phone" required>
+
+                Email:
+                <input type="email" name="email" required>
+
+                Username:
+                <input type="text" name="username" required>
+
+                Password:
+                <input type="password" name="password" required>
+
+                <input type="submit" value="Register">
+            </form>
+
+            <p>Already registered? <a href="doctor_login.html">Login here</a></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
