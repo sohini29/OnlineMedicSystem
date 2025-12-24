@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Write Prescription</title>
+    <style>
+        body{font-family:Arial;background:#f4f6f8;}
+        .box{width:400px;margin:50px auto;background:#fff;padding:30px;
+             box-shadow:0 0 20px rgba(0,0,0,0.2);border-radius:10px;}
+        h2{text-align:center;color:#2c3e50;}
+        input,textarea{width:100%;padding:8px;margin:8px 0;}
+        input[type=submit]{background:#2c3e50;color:white;border:none;
+                           padding:10px;font-size:16px;border-radius:5px;}
+        input[type=submit]:hover{background:#1abc9c;}
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Write Prescription</h2>
+    <form action="DoctorWritePrescriptionServlet" method="post">
+        Prescription ID:
+        <input type="text" name="pid" required>
+
+        Patient Username:
+        <input type="text" name="puser" required>
+
+        Medicine:
+        <input type="text" name="medicine" required>
+
+        Dosage:
+        <input type="text" name="dosage" required>
+
+        Date:
+        <input type="text" name="pdate" placeholder="DD-MM-YYYY" required>
+
+        <input type="submit" value="Submit Prescription">
+    </form>
+</div>
+
+</body>
+</html>
