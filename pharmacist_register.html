@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacist Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #fff3e6;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* LEFT IMAGE */
+        .image-section {
+            flex: 1;
+            background: url("https://wallpapers.com/images/hd/pharmacy-background-l3fkq9y81ntprmwh.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff3e6;
+        }
+
+        .form-box {
+            width: 420px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(255, 140, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #cc5200;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 12px;
+            border-radius: 6px;
+            border: 1px solid #ffcc99;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff9933, #ff6600);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #ff6600, #ff9933);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image-section {
+                height: 30vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="image-section"></div>
+
+    <div class="form-section">
+        <div class="form-box">
+            <h2>Pharmacist Registration</h2>
+
+            <form action="PharmacistRegisterServlet" method="post">
+
+                Full Name:
+                <input type="text" name="full_name" required>
+
+                Phone:
+                <input type="text" name="phone" required>
+
+                Email:
+                <input type="email" name="email">
+
+                Username:
+                <input type="text" name="username" required>
+
+                Password:
+                <input type="password" name="password" required>
+
+                <input type="submit" value="Register">
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
