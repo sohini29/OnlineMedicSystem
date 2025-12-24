@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: white;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Left Image Section */
+        .image-section {
+            flex: 1;
+            background-image: url("https://png.pngtree.com/background/20210709/original/pngtree-blue-hospital-medical-western-medicine-poster-background-picture-image_954226.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Right Login Section */
+        .login-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            background: #ffffff;
+            padding: 40px;
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,51,102,0.2);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #003366;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #66a3ff;
+            border-radius: 6px;
+        }
+
+        .login-box input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .login-box input[type="submit"]:hover {
+            background-color: #1a5fd0;
+        }
+
+        .login-box p {
+            margin-top: 12px;
+            color: #003366;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* ONLY links are bold */
+        .login-box p a {
+            color: #1a5fd0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-box p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                height: 35vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-section"></div>
+
+    <div class="login-section">
+        <div class="login-box">
+            <h2>Patient Login</h2>
+            <form action="PatientLoginServlet" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <p>Not registered? <a href="patient_register.html">Register here</a></p>
+            <p><a href="PatientForgotPasswordServlet">Forgot Password?</a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
